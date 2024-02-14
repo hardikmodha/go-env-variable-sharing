@@ -50,6 +50,6 @@ Checking if I can steal the secret...
 
 With that, we can observe the following points: 
 
-1. Environment variables set via `os.SetEnv` in the parent process are not directly available to the child process.
+1. Environment variables set via `os.SetEnv` in the parent process are not directly available to the child process if cmd.Env is explicitly passed.
 2. Any environment variables are set via `cmd.Env` before running the child process are available to the child process.
-3. Any environment variable set inside process boundary using `os.SetEnv` are not available to any other process running on the same machine.
+4. Any environment variable set inside process boundary using `os.SetEnv` are not available to any other process running on the same machine.
